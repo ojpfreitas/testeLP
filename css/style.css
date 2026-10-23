@@ -1,0 +1,160 @@
+/* =========================================================
+   Variáveis: mude as cores e fontes aqui
+   ========================================================= */
+:root {
+    --paper: #eef2f6;
+    --white: #ffffff;
+    --ink: #0d1b2a;
+    --muted: #55657a;
+    --line: #d3dce6;
+    --blue: #5f87ad;
+    --blue-d: #2f5d8a;
+    --sun: #f4c542;
+    --max: 1120px;
+    --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+    --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Base */
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { font: 17px/1.6 var(--sans); color: var(--ink); background: var(--paper); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--blue-d); outline-offset: 3px; }
+.wrap { width: min(100% - 40px, var(--max)); margin: 0 auto; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; }
+h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
+.lead { max-width: 52ch; font-size: 1.1rem; color: var(--muted); }
+.lead strong { color: var(--ink); }
+
+/* Botões */
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; border-radius: 12px; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-ink { background: var(--ink); color: #fff; }
+.btn-ink:hover { background: var(--blue-d); }
+.btn-sun { background: var(--sun); color: var(--ink); }
+.btn-sun:hover { background: #f8d468; }
+.btn-sm { padding: 9px 16px; font-size: 0.92rem; }
+.btn-lg { padding: 16px 28px; font-size: 1.05rem; }
+.text-link { font-weight: 600; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; text-decoration-color: var(--blue); }
+
+/* Cabeçalho: barra flutuante */
+.header { position: sticky; top: 12px; z-index: 10; padding: 0 12px; }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.header .bar { width: min(100%, 1000px); margin: 0 auto; padding: 8px 8px 8px 16px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+.logo { display: flex; align-items: center; gap: 10px; font: 700 1.05rem var(--display); text-decoration: none; }
+.logo b { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--ink); color: var(--sun); font-size: 0.85rem; }
+.nav { display: flex; gap: 28px; }
+.nav a { font-size: 0.95rem; font-weight: 500; color: var(--muted); text-decoration: none; }
+.nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; padding: 72px 0 96px; }
+h1 { margin-bottom: 24px; font-size: clamp(2.6rem, 6vw, 4.5rem); }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 32px; }
+.hero-visual { position: relative; max-width: 420px; justify-self: end; margin-bottom: 40px; }
+.hero-visual::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border-radius: 28px; background: var(--blue); }
+.photo { position: relative; overflow: hidden; border-radius: 28px; aspect-ratio: 4 / 5; background: var(--ink); }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; }
+
+/* Conversa de exemplo */
+.chat { position: absolute; left: -64px; bottom: -40px; display: grid; gap: 8px; width: 280px; padding: 14px; border-radius: 20px; background: var(--white); box-shadow: 0 18px 40px rgba(13, 27, 42, 0.2); }
+.bubble { max-width: 92%; padding: 10px 14px; border-radius: 14px; font-size: 0.88rem; line-height: 1.4; }
+.bubble.in { background: var(--paper); border-bottom-left-radius: 4px; }
+.bubble.out { justify-self: end; background: var(--sun); border-bottom-right-radius: 4px; }
+
+/* Projetos: lista em linhas */
+.portfolio { padding: 24px 0 88px; }
+.sub { margin: 10px 0 8px; color: var(--muted); }
+.group { margin: 44px 0 4px; padding-bottom: 12px; border-bottom: 2px solid var(--ink); font-size: 1.3rem; letter-spacing: -0.01em; }
+.group small { font: 400 0.9rem var(--sans); letter-spacing: 0; color: var(--muted); }
+.row { display: grid; grid-template-columns: 220px 1fr auto; gap: 28px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.row img { width: 220px; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 12px; border: 1px solid var(--line); background: var(--white); }
+.row h3 { margin: 6px 0 4px; font-size: 1.4rem; }
+.row p { max-width: 54ch; color: var(--muted); font-size: 0.97rem; }
+.tag { font-size: 0.82rem; font-weight: 600; color: var(--blue-d); }
+.row-link { padding: 10px 18px; border: 2px solid var(--ink); border-radius: 12px; font-size: 0.92rem; font-weight: 600; text-decoration: none; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+.row-link:hover { background: var(--ink); color: #fff; }
+
+/* Como funciona: faixa escura com sequência real */
+.process { padding: 88px 0; background: var(--ink); color: #fff; }
+.process h2 { margin-bottom: 40px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 0; list-style: none; counter-reset: step; }
+.steps li { counter-increment: step; padding-top: 22px; border-top: 3px solid var(--blue); }
+.steps li::before { content: counter(step); display: block; margin-bottom: 14px; font: 700 3.4rem/1 var(--display); color: var(--sun); }
+.steps h3 { margin-bottom: 8px; font-size: 1.4rem; }
+.steps p { color: #b6c3d3; font-size: 0.98rem; }
+
+/* Dúvidas: sanfona */
+.faq { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; padding: 88px 0; }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list details:first-child { border-top: 1px solid var(--line); }
+.faq-list summary { display: flex; justify-content: space-between; gap: 16px; padding: 20px 0; font: 700 1.2rem var(--display); letter-spacing: -0.01em; cursor: pointer; list-style: none; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; font-size: 1.6rem; line-height: 1; color: var(--blue-d); transition: transform 0.25s; }
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+.faq-list p { padding: 0 0 20px; max-width: 50ch; color: var(--muted); }
+
+/* Fechamento */
+.final { padding: 0 0 72px; }
+.final-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding: 56px; border-radius: 28px; background: var(--blue-d); color: #fff; }
+.final h2 { margin-bottom: 14px; }
+.final .lead { color: #d3e0ee; }
+.mail { color: #d3e0ee; font-size: 0.95rem; }
+.mail:hover { color: #fff; }
+.who { display: flex; align-items: center; gap: 20px; padding: 20px; border-radius: 20px; background: rgba(255, 255, 255, 0.1); }
+.who img { flex: none; width: 92px; height: 92px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; box-shadow: 0 0 0 3px var(--sun); }
+.who p { font-size: 0.96rem; color: #d3e0ee; }
+.who strong { color: #fff; }
+
+/* Rodapé */
+.footer { padding: 0 0 28px; color: var(--muted); font-size: 0.92rem; }
+.footer .bar { flex-wrap: wrap; padding-top: 22px; border-top: 1px solid var(--line); }
+.social { display: flex; gap: 20px; }
+.social a:hover { color: var(--ink); }
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float { position: fixed; z-index: 20; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: #25d366; color: #fff; box-shadow: 0 8px 22px rgba(13, 27, 42, 0.3); transition: transform 0.2s; }
+.whatsapp-float:hover { transform: scale(1.08); }
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .nav { display: none; }
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 72px; }
+    .hero-visual { justify-self: center; width: min(78%, 380px); }
+    .chat { left: -16px; width: min(280px, 92%); }
+    .row { grid-template-columns: 160px 1fr; gap: 20px; }
+    .row img { width: 160px; }
+    .row-link { grid-column: 2; justify-self: start; }
+    .steps { grid-template-columns: 1fr; }
+    .faq, .final-grid { grid-template-columns: 1fr; gap: 28px; }
+    .final-grid { padding: 40px 28px; }
+}
+@media (max-width: 600px) {
+    body { font-size: 16px; }
+    .header .bar { padding-left: 12px; }
+    .row { grid-template-columns: 1fr; }
+    .row img, .row-link { width: 100%; grid-column: auto; }
+    .row-link { text-align: center; }
+    .actions .btn { width: 100%; }
+    .portfolio { padding-bottom: 60px; }
+    .process, .faq { padding: 60px 0; }
+    .final-grid { padding: 32px 20px; }
+    .who { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+}
+
+/* Prints clicáveis com animação ao passar o mouse */
+.thumb-link { position: relative; display: block; overflow: hidden; border-radius: 12px; box-shadow: 0 0 0 rgba(13, 27, 42, 0); transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s; }
+.thumb-link img { width: 100%; transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.thumb-link::after { content: "\2197"; position: absolute; top: 10px; right: 10px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--sun); color: var(--ink); font-weight: 700; opacity: 0; transform: translateY(8px) scale(0.85); transition: opacity 0.3s, transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.row.linked:hover .thumb-link { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(13, 27, 42, 0.2); }
+.row.linked:hover .thumb-link img { transform: scale(1.07); }
+.row.linked:hover .thumb-link::after { opacity: 1; transform: none; }
+.row.linked:hover h3 { color: var(--blue-d); }
+@media (max-width: 600px) { .thumb-link { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .row.linked:hover .thumb-link, .row.linked:hover .thumb-link img { transform: none; } }
